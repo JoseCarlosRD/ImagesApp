@@ -17,7 +17,9 @@ export class ImageComponent implements OnInit {
   formTemplate = new FormGroup({
     titulo : new FormControl('',Validators.required),
     category : new FormControl(''),
-    imageUrl : new FormControl('',Validators.required)
+    imageUrl : new FormControl('',Validators.required),
+    codigo : new FormControl('',Validators.required),
+    youtube : new FormControl('',Validators.required)
   })
 
   constructor(private storage:AngularFireStorage,private service:ImageService) { }
@@ -65,6 +67,8 @@ export class ImageComponent implements OnInit {
     this.formTemplate.setValue({
       titulo: '',
       imageUrl: '',
+      codigo: '',
+      youtube: '',
       category: 'Tutorial'
     });
     this.imgSrc = '/assets/img/home.jpg';

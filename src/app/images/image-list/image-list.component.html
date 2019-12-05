@@ -1,29 +1,77 @@
 <div class="container">
-    <table *ngIf="imageList">
+    <table *ngIf="imageList" class="mb-5">
         <tr *ngFor="let i of rowIndexArray">
           <td>
-            <div class="imagebox" *ngIf="i==0">
+            <div class="imagebox" *ngIf="i==0" >
               <a routerLink="/image/upload">
-                <img src="/assets/img/new_image.jpg" class="img-fluid">
+                <img src="/assets/img/new_image.jpg" class="img-fluid" >
                 <span class="imagebox-desc">Insert New Image</span></a>
             </div>
             <div class="imagebox" *ngIf="i!=0" >
-              <img [src]="imageList[3*i-1].imageUrl" class="img-fluid">
-              <span class="imagebox-desc">{{imageList[3*i-1].titulo}}</span>
+              <a routerLink="/detalle/{{imageList[3*i-1].codigo}}">
+                  <img [src]="imageList[3*i-1].imageUrl" class="img-fluid" >
+                  <span class="imagebox-desc">{{imageList[3*i-1].titulo}} <br> {{imageList[3*i-1].codigo}}</span>
+              </a>
+             
             </div>
           </td>
           <td *ngIf="imageList[3*i]">
             <div class="imagebox">
-              <img [src]="imageList[3*i].imageUrl" class="img-fluid">
-              <span class="imagebox-desc">{{imageList[3*i].titulo}}</span>
+              <a  routerLink="/detalle/{{imageList[3*i].codigo}}">
+                  <img [src]="imageList[3*i].imageUrl" class="img-fluid" >
+                  
+                  <span class="imagebox-desc">{{imageList[3*i].titulo}} <br> {{imageList[3*i].codigo}}
+                  </span>
+              </a>
+             
             </div>
           </td>
-          <td *ngIf="imageList[3*i+1]">
+          <td *ngIf="imageList[3*i+1]" >
             <div class="imagebox">
-              <img [src]="imageList[3*i+1].imageUrl" class="img-fluid">
-              <span class="imagebox-desc">{{imageList[3*i+1].titulo}}</span>
+              <a  routerLink="/detalle/{{imageList[3*i+1].codigo}}">
+                <img [src]="imageList[3*i+1].imageUrl" class="img-fluid" >
+              <span class="imagebox-desc">{{imageList[3*i+1].titulo}} <br> {{imageList[3*i+1].codigo}}</span>
+              
+              </a>
+              
             </div>
           </td>
         </tr>
       </table>
 </div>
+<style>
+.lista-productos{
+	width: 98%;
+	display: flex;
+	flex-flow: row wrap;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+.producto{
+    flex: 20%;
+	border: 1px solid #0b5c22;
+	text-align: center;
+	margin: 7px;
+	border-radius: 20px;
+    box-shadow: 5px 5px 5px #0b5c22;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}.imagenp{
+	transform: scale(0.9);
+}
+
+.imagebox:hover{
+	filter: contrast(200%);
+}
+img{
+  width: 300px;
+  height: 300px;
+}
+td{
+  width: 30%;
+  margin-bottom: 10px;
+}
+.imagebox{
+  margin: 5px;
+}
+</style>
