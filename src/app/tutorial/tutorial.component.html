@@ -8,19 +8,19 @@
                 <span class="imagebox-desc">Insert New Image</span></a>
             </div>
             <div class="imagebox" *ngIf="i!=0" >
-              <a routerLink="/image/ver/{{imageList[3*i-1].direccion}}">
+              <a routerLink="/detalle/{{imageList[3*i-1].codigo}}">
                   <img [src]="imageList[3*i-1].imageUrl" class="img-fluid" >
-                  <span class="imagebox-desc">{{imageList[3*i-1].titulo}} <br> {{imageList[3*i-1].detalles}}</span>
+                  <span class="imagebox-desc">{{imageList[3*i-1].titulo}} <br> {{imageList[3*i-1].codigo}}</span>
               </a>
              
             </div>
           </td>
           <td *ngIf="imageList[3*i]">
             <div class="imagebox">
-              <a  routerLink="/image/ver/{{imageList[3*i].direccion}}">
+              <a  routerLink="/detalle/{{imageList[3*i].codigo}}">
                   <img [src]="imageList[3*i].imageUrl" class="img-fluid" >
                   
-                  <span class="imagebox-desc">{{imageList[3*i].titulo}} <br> {{imageList[3*i].detalles}}
+                  <span class="imagebox-desc">{{imageList[3*i].titulo}} <br> {{imageList[3*i].codigo}}
                   </span>
               </a>
              
@@ -28,9 +28,9 @@
           </td>
           <td *ngIf="imageList[3*i+1]" >
             <div class="imagebox">
-              <a  routerLink="/image/ver/{{imageList[3*i+1].direccion}}">
+              <a  routerLink="/detalle/{{imageList[3*i+1].codigo}}">
                 <img [src]="imageList[3*i+1].imageUrl" class="img-fluid" >
-              <span class="imagebox-desc">{{imageList[3*i+1].titulo}} <br> {{imageList[3*i+1].detalles}}</span>
+              <span class="imagebox-desc">{{imageList[3*i+1].titulo}} <br> {{imageList[3*i+1].codigo}}</span>
               
               </a>
               

@@ -4,16 +4,16 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 @Injectable({
   providedIn: 'root'
 })
-export class ImageService {
+export class CategoriasServices {
   imageDetailList: AngularFireList<any>;
-  constructor(private firebase:AngularFireDatabase) { }
+  constructor(private firebase:AngularFireDatabase) {
+    this.getImageDetailList()
+   }
   
   getImageDetailList() {
-    this.imageDetailList = this.firebase.list('imageDetails');
+    this.imageDetailList = this.firebase.list('categorias');
   }
-
   insertImageDetails(imageDetails) {
     this.imageDetailList.push(imageDetails);
   }
-
 }

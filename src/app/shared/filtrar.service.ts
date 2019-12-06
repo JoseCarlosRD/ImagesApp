@@ -4,12 +4,13 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 @Injectable({
   providedIn: 'root'
 })
-export class ImageService {
+export class FiltrarServices {
   imageDetailList: AngularFireList<any>;
   constructor(private firebase:AngularFireDatabase) { }
-  
-  getImageDetailList() {
-    this.imageDetailList = this.firebase.list('imageDetails');
+
+
+  getImageDetailList(id) {
+    this.imageDetailList = this.firebase.list('imageDetails',ref=>ref.orderByChild("category").equalTo(id));
   }
 
   insertImageDetails(imageDetails) {

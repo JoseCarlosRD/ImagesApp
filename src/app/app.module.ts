@@ -11,13 +11,21 @@ import { ImagesComponent } from './images/images.component';
 import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
 import { environment } from "../environments/environment";
+import { TutorialComponent } from './tutorial/tutorial.component';
+import { GameplayComponent } from './gameplay/gameplay.component';
+import { BlogComponent } from './blog/blog.component';
+import { VerimagenesComponent } from './verimagenes/verimagenes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImagesComponent,
     ImageComponent,
-    ImageListComponent
+    ImageListComponent,
+    TutorialComponent,
+    GameplayComponent,
+    BlogComponent,
+    VerimagenesComponent
   ],
   imports: [
     BrowserModule,

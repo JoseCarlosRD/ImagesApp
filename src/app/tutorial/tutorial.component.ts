@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoriasServices } from 'src/app/shared/categorias.service';
+import { ImageService } from 'src/app/shared/image.service';
+
 
 @Component({
-  selector: 'app-image-list',
-  templateUrl: './image-list.component.html',
-  styles: []
+  selector: 'app-tutorial',
+  templateUrl: './tutorial.component.html',
+  styleUrls: []
 })
-export class ImageListComponent implements OnInit {
+export class TutorialComponent implements OnInit {
+
   imageList: any[];
   rowIndexArray: any[];
 
-  constructor(private service: CategoriasServices) { }
+  constructor(private service: ImageService) { }
 
   ngOnInit() {
     this.service.imageDetailList.snapshotChanges().subscribe(
